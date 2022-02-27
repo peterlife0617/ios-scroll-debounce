@@ -148,6 +148,17 @@
         <div class="item">100</div>
     </div>
     <script>
+        function safariHacks() {
+            let windowsVH = window.innerHeight / 100;
+            document.querySelector('.content').style.setProperty('--vh', windowsVH + 'px');
+            window.addEventListener('resize', function () {
+                document.querySelector('.content').style.setProperty('--vh', windowsVH + 'px');
+            });
+        }
+
+        safariHacks();
+    </script>
+    <script>
         function stopDrop() {
             var lastY;
             var scrollEle = document.querySelector(".content")
